@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "newman": "^5.2.1"
+    "newman": "^5.2.1",
+    "request": "^2.88.2"
   }
 }
