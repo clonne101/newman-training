@@ -17,7 +17,28 @@
 							"script": {
 								"id": "bb3294fc-ac6e-41b8-b872-5564ce306b6a",
 								"exec": [
-									""
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an array\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response array object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0]).to.have.a.property('flight_number');",
+									"    pm.expect(jsonData[0]).to.have.a.property('mission_name');",
+									"    pm.expect(jsonData[0]).to.have.a.property('launch_year');",
+									"    pm.expect(jsonData[0]).to.have.a.property('links');",
+									"    pm.expect(jsonData[0].links).to.be.an(\"object\");",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -185,6 +206,39 @@
 				},
 				{
 					"name": "Specific Launch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9996cb90-834d-4dcd-adb2-d4486c3f6e82",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an object\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.a.property('flight_number');",
+									"    pm.expect(jsonData).to.have.a.property('mission_name');",
+									"    pm.expect(jsonData).to.have.a.property('launch_year');",
+									"    pm.expect(jsonData).to.have.a.property('links');",
+									"    pm.expect(jsonData.links).to.be.an(\"object\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -356,6 +410,39 @@
 			"item": [
 				{
 					"name": "Roadster",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "510dde0d-7d96-4089-8737-84ddca8bb942",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an object\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response array object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.a.property('name');",
+									"    pm.expect(jsonData).to.have.a.property('orbit_type');",
+									"    pm.expect(jsonData).to.have.a.property('launch_date_utc');",
+									"    pm.expect(jsonData).to.have.a.property('flickr_images');",
+									"    pm.expect(jsonData.flickr_images).to.be.an(\"array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -412,6 +499,39 @@
 			"item": [
 				{
 					"name": "All Rockets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d33e8b97-4f60-4af3-bc53-0171c13bcf32",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an array\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response array object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0]).to.have.a.property('id');",
+									"    pm.expect(jsonData[0]).to.have.a.property('stages');",
+									"    pm.expect(jsonData[0]).to.have.a.property('company');",
+									"    pm.expect(jsonData[0]).to.have.a.property('engines');",
+									"    pm.expect(jsonData[0].engines).to.be.an(\"object\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -580,6 +700,39 @@
 				},
 				{
 					"name": "Specific Rocket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "30b4d041-c7a4-4184-b358-ac92ca201afc",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an object\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.a.property('id');",
+									"    pm.expect(jsonData).to.have.a.property('stages');",
+									"    pm.expect(jsonData).to.have.a.property('company');",
+									"    pm.expect(jsonData).to.have.a.property('engines');",
+									"    pm.expect(jsonData.engines).to.be.an(\"object\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -757,6 +910,39 @@
 			"item": [
 				{
 					"name": "All Dragons",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a398460c-6ce2-465d-abe2-a70f32aa0e99",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an array\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response array object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0]).to.have.a.property('id');",
+									"    pm.expect(jsonData[0]).to.have.a.property('name');",
+									"    pm.expect(jsonData[0]).to.have.a.property('type');",
+									"    pm.expect(jsonData[0]).to.have.a.property('heat_shield');",
+									"    pm.expect(jsonData[0].heat_shield).to.be.an(\"object\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -779,6 +965,39 @@
 				},
 				{
 					"name": "Specific Dragon",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dec8b97c-2ac6-4eaa-893f-ba45732eaf49",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an object\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.a.property('id');",
+									"    pm.expect(jsonData).to.have.a.property('name');",
+									"    pm.expect(jsonData).to.have.a.property('type');",
+									"    pm.expect(jsonData).to.have.a.property('heat_shield');",
+									"    pm.expect(jsonData.heat_shield).to.be.an(\"object\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -831,6 +1050,39 @@
 			"item": [
 				{
 					"name": "All Cores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7cb9a48-3312-4f5a-a2a3-5e0e5186584a",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an array\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response array object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0]).to.have.a.property('core_serial');",
+									"    pm.expect(jsonData[0]).to.have.a.property('status');",
+									"    pm.expect(jsonData[0]).to.have.a.property('original_launch');",
+									"    pm.expect(jsonData[0]).to.have.a.property('missions');",
+									"    pm.expect(jsonData[0].missions).to.be.an(\"array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -853,6 +1105,39 @@
 				},
 				{
 					"name": "Specifc Core",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a1282490-24a0-442b-b5ad-fc3d15cacf72",
+								"exec": [
+									"pm.test(\"Test status response is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test response to be an object\", function () {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"});",
+									"",
+									"pm.test(\"Test response to not be empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.not.be.empty",
+									"});",
+									"",
+									"pm.test(\"Test response object to have expected keys\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.a.property('core_serial');",
+									"    pm.expect(jsonData).to.have.a.property('status');",
+									"    pm.expect(jsonData).to.have.a.property('original_launch');",
+									"    pm.expect(jsonData).to.have.a.property('missions');",
+									"    pm.expect(jsonData.missions).to.be.an(\"array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -903,7 +1188,7 @@
 	],
 	"variable": [
 		{
-			"id": "afe82ab9-911c-4262-9929-7fc25173abec",
+			"id": "6c4a6031-1e3c-4b2b-8f3f-30fa77398bd8",
 			"key": "rocket_id",
 			"value": "falcon9",
 			"type": "string"
