@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "newman": "^5.2.1",
-    "request": "^2.88.2"
+    "newman-reporter-csv": "^1.2.0",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-htmlextra": "^1.19.6",
+    "request": "^2.88.2",
+    "rimraf": "^2.7.1"
   }
 }
