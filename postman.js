@@ -35,8 +35,8 @@ function getCollectionFile(postman_collection_url, postman_collection_name) {
               resolve(true);
             });
           } else {
-            console.log(error);
-            reject(error);
+            console.log(err);
+            reject(err);
           }
         });
       } else {
