@@ -13,7 +13,7 @@ Kindly find below links to resources you can use as a guide and also links to my
 * Postman Learning: https://learning.postman.com/docs/getting-started/introduction
 * Postman Newman: https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/
 
-GitHub repository for API code:
+GitHub repository for the test code:
 https://github.com/clonne101/newman-training
 
 Social Links:
